@@ -14,9 +14,6 @@ class PreferencesUser {
     this._prefs = await SharedPreferences.getInstance();
   }
 
-  // bool _colorSecundario;
-  // int _genero;
-  // String _nombre;
   // GET Y SET de Genero
 
   get genero {
@@ -43,5 +40,15 @@ class PreferencesUser {
 
   set nombreUsuario(String value) {
     _prefs.setString('nombreUsuario', value);
+  }
+
+  // GET Y SET de ultima pantalla
+
+  get lastScreen {
+    return _prefs.getString('ultimaPagina') ?? '/';
+  }
+
+  set lastScreen(String value) {
+    _prefs.setString('ultimaPagina', value);
   }
 }
